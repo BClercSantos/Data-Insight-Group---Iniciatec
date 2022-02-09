@@ -1,0 +1,148 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+    margin: 15%!important;
+    margin-top: 2%!important;
+    margin-bottom: 2%!important;
+}
+img{
+    width: 3rem;
+    height: 2.5rem;
+    margin-bottom: .5rem;
+}
+.h1{
+    margin-bottom: 1.2rem !important;
+    display: flex;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    background-image: url("../Images/DIG_Home_h1.png");
+    background-size: cover;
+}
+.titulo{
+    display: flex;
+    justify-content: space-between;
+}
+.mail{
+    display: flex;
+    height: 3rem;
+    margin-top: 1rem;
+}
+.letramail{
+    color: rgb(26, 136, 226);
+    font-size: 1.5rem;
+}
+nav{
+    padding: 0% !important;
+    border: solid black 2px;
+    background-color: rgb(223, 223, 223) ;
+    margin-top: -.5rem;
+}
+.navbar-nav {
+    padding-left: 2rem !important;
+}
+.dropdown-item.active, 
+.dropdown-item:active{
+    color: #1e2125 !important;
+    background-color: #e9ecef !important;
+}
+.dropdown-item{
+    width: 94% !important;
+    padding: 0rem !important;
+    margin: .2rem !important;
+}
+.dropdown-menu{
+    min-width: 7rem !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+.active{
+    background-color: rgb(199, 199, 199);
+}
+.inactive{
+    color: rgb(19, 114, 223)!important;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+}
+.imagen{
+    width: 300px;
+    height: 300px;
+    background-image: url("../Images/DIG_Home.png");
+    background-size: cover;
+    margin-top: 5rem;
+}
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+}
+.escrito{
+    width: 70%;
+}
+table{
+    border: solid black !important;
+    text-align: center;
+    width: 100%;
+}
+.statistics{
+    width: 40% !important;
+}
+h2{
+    text-align: center;
+}
+thead{
+    height: 30px;
+}
+tbody, td, tfoot, th, thead, tr {
+    min-width: 80px;
+    border-width: .1rem !important;
+}
+.names{
+    width: 30%;
+}
+tr{
+    height: 20px;
+}
+th{
+    max-width: 50px;
+}
+.th1{
+    width: 50%;
+}
+.accordion-button{
+    padding: 0% !important;
+    display:block!important;
+    width: 10% !important;
+    color: rgb(19, 114, 223)!important;
+    text-decoration: underline;
+}
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+.accordion-button:not(.collapsed){
+    background: none !important;
+}
+.accordion-header {
+    margin-bottom: 1rem !important;
+}
+.accordion-item {
+    border: none !important;
+}
+.check{
+    margin-left: 1.5%;
+}
+.select{
+    margin-bottom: 2%;
+}
+select{
+    width: 7%;
+    text-align: center;
+}
+footer{
+    border: solid black 2px;
+    background-color: rgb(223, 223, 223) ;
+    text-align: center;
+    padding-top: .5rem;
+    padding-left: 3rem;
+}

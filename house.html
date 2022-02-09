@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> House </title>
+      <link rel="stylesheet" href="./Styles/style.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    
+    <body>
+      <header>
+        <div class="titulo">
+          <div class="h1">
+            <div class="logo"></div>
+            <h1>Data Insight Group</h1>
+          </div>
+          <div class="mail">
+            <img src="https://img.icons8.com/windows/32/000000/secured-letter--v1.png"/>
+            <p class="letramail"> info@DataInsightGroup.net </p>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown"> 
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="./home.html" class="nav-link inactive" aria-current="page">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                  Congress 113
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item active" href="./house.html"> House </a></li>
+                  <li><a class="dropdown-item" href="./senate.html"> Senate </a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown" >
+                <a class="nav-link inactive" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                  Attendance
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="./house-attendance.html"> House </a></li>
+                  <li><a class="dropdown-item" href="./senate-attendance.html"> Senate </a></li>  
+                </ul>
+              </li>
+              <li class="nav-item dropdown" >
+                <a class="nav-link inactive" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
+                  Party Loyalty
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="./house-party-loyality.html"> House </a></li>
+                  <li><a class="dropdown-item" href="./senate-party-loyalty.html"> Senate </a></li>  
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <br>
+      <br>        
+            <!--Table container-->
+      <section>
+        <div class="cuerpo">
+          <div class="escrito">     
+            <h2>Congressmen</h2>
+            <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+            <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+          </div>
+          <br>
+          <br>
+          <div>
+            <label for="partyCheckbox"> Filter by Party:</label>
+            <label class="check" for="partyD"> Democrat: </label>
+            <input type="checkbox" name="party" value="D" onchange="membersLocalStorage()" id="partyD">
+            <label class="check" for="partyR"> Republican:</label>
+            <input type="checkbox" name="party" value="R" onchange="membersLocalStorage()" id="partyR">
+            <label class="check" for="partyID"> Independent:</label>
+            <input type="checkbox" name="party" value="ID" onchange="membersLocalStorage()" id="partyID">
+          </div>
+          <div class="select">
+            <label for="statesSelector"> Filter by State: </label>
+            <select name="statesSelector"id="statesSelect" onchange="membersLocalStorage()"> <!-- onchange significa que en cada cambio de opcion se ejecuta la funcion chooseStates -->
+                <option value="All"> All </option>
+            </select>
+          </div>
+          <div id="app"> 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th> Party </th>
+                        <th> State </th>
+                        <th> Years in office </th>
+                        <th> % votes w/party </th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-data">
+                  <tr v-for="value in members">
+                    <td> <a v-bind:href="value.url"> {{value.first_name}} {{value.middle_name || ""}} {{value.last_name}} </a> </td> 
+                    <td> {{value.party}} </td>
+                    <td> {{value.state}} </td>
+                    <td> {{value.seniority}} </td>
+                    <td> {{value.votes_with_party_pct}} </td>
+                  </tr>
+                </tbody>
+            </table>
+          </div> 
+	      </div>
+      </section>
+      <br>
+      <footer>
+        <h5> © 2021 Data Insight Group | All Rights Reserved </h5>
+      </footer>
+      <!-- <script src="./Dinamic/pro-congress-113-house.js"></script> -->
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script src="./Dinamic/tabla.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
+    </body>
+</html>
